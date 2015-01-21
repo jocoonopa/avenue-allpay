@@ -15,24 +15,24 @@ interface ITarget
      * 
      * @return Avenue\AllPay\AllInOne
      */
-    public function init($hashKey, $hashIv, $merchantID);
+    abstract public function init($hashKey, $hashIv, $merchantID);
 
     /**
      * 結帳
      *
      * @param array $billInfo [訂單資訊關聯陣列]
      */
-    public function pay();
+    abstract public function pay();
 
     /**
      * 退款
      */
-    public function cancel();
+    abstract public function cancel();
 
     /**
      * 通知結果
      */
-    public function notify();
+    abstract public function notify();
 
     /**
      * 查詢訂單
@@ -40,5 +40,5 @@ interface ITarget
      * @param  Avenue\AllPay\Strategy\Search $strategy
      * @return json 
      */
-    public function search(Search $strategy);
+    abstract public function search(Search $strategy);
 }
