@@ -1,6 +1,6 @@
 <?php
 
-namespace Avenue\AllPay;
+namespace Avenue;
 
 /**
  * 付款方式。
@@ -740,7 +740,7 @@ class AllInOne
         }
 
         if (sizeof($arErrors) > 0) {
-            throw new Exception(join('- ', $arErrors));
+            throw new \Exception(join('- ', $arErrors));
         }
 
         return $szHtml;

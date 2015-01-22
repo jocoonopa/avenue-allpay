@@ -1,8 +1,8 @@
 <?php
 
-namespace Avenue\AllPay\Adapter;
+namespace Avenue\Adapter;
 
-use Avenue\AllPay\Strategy\Search;
+use Avenue\Strategy\Search;
 
 interface ITarget 
 {
@@ -12,27 +12,26 @@ interface ITarget
      * @param string $hashKey [all in one 介接的 HashKey]
      * @param string $hashIv [all in one 介接的 HashIV]
      * @param string $merchantID [特店編號]
-     * 
-     * @return Avenue\AllPay\AllInOne
+     * @param boolean $isProd [正式環境/測試環境]
      */
-    abstract public function init($hashKey, $hashIv, $merchantID);
+    function init($hashKey, $hashIv, $merchantID, $isProd = false);
 
     /**
      * 結帳
      *
      * @param array $billInfo [訂單資訊關聯陣列]
      */
-    abstract public function pay();
+    function pay(array $send);
 
     /**
      * 退款
      */
-    abstract public function cancel();
+    function cancel();
 
     /**
      * 通知結果
      */
-    abstract public function notify();
+    function notify();
 
     /**
      * 查詢訂單
@@ -40,5 +39,5 @@ interface ITarget
      * @param  Avenue\AllPay\Strategy\Search $strategy
      * @return json 
      */
-    abstract public function search(Search $strategy);
+    function search(Search $strategy);
 }
