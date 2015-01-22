@@ -56,16 +56,16 @@ class AdapterTest extends \PHPUnit_Framework_TestCase
          * 
          * @var Avenue\Helper\Accessor
          */
-        $accessor = \PHPUnit_Framework_Assert::readAttribute($adapter, 'accessor');
+        // $accessor = \PHPUnit_Framework_Assert::readAttribute($adapter, 'accessor');
 
         $adapter->init($hashKey, $hashIv, $merchantID, $isProd);
 
         //$this->invokeMethod($user, 'cryptPassword', array('passwordToCrypt'));
         
-        $this->assertEquals($hashKey, $accessor->getHashKey());
-        $this->assertEquals($hashIv, $accessor->getHashIv());
-        $this->assertEquals($merchantID, $accessor->getMerchantID());
-        $this->assertEquals(($isProd ? ServiceURLHelper::PROD : ServiceURLHelper::TEST), $accessor->getServiceURL());
+        $this->assertEquals($hashKey, $adapter->allInOne->getHashKey());
+        $this->assertEquals($hashIv, $adapter->allInOne->getHashIV());
+        $this->assertEquals($merchantID, $adapter->allInOne->getMerchantID());
+        $this->assertEquals(($isProd ? ServiceURLHelper::PROD : ServiceURLHelper::TEST), $adapter->allInOne->getServiceURL());
     }
 
     public function initTestProvider()

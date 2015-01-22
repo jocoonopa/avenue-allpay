@@ -1227,4 +1227,539 @@ class AllInOne
         return $rs;
     }
 
+    public function setItems(array $arr)
+    {
+        $this->Send['Items'] = $arr;
+    }
+
+    public function addItem(array $item)
+    {
+        $this->Send['Items'][] = $item;
+    }
+
+    public function removeItems()
+    {
+        $this->Send['Items'] = array();
+    }
+
+    public function getItems()
+    {
+        return $this->Send['Items'];
+    }
+
+    public function setReturnURL($val)
+    {
+        $this->Send['ReturnURL'] = $val;
+
+        return $this;
+    }
+
+    public function getReturnURL()
+    {
+        return $this->get('ReturnURL');
+    }
+
+    public function setMerchantTradeNo($val)
+    {
+        $this->Send['MerchantTradeNo'] = $val;
+
+        return $this;
+    }
+
+    public function getMerchantTradeNo()
+    {
+        return $this->get('MerchantTradeNo');
+    }
+
+    public function setMerchantTradeDate($val)
+    {
+        $this->Send['MerchantTradeDate'] = $val;
+
+        return $this;
+    }
+
+    public function getMerchantTradeDate()
+    {
+        return $this->get('MerchantTradeDate');
+    }
+
+    public function setTradeDesc($val)
+    {
+        $this->Send['TradeDesc'] = $val;
+
+        return $this;
+    }
+
+    public function getTradeDesc()
+    {
+        return $this->get('TradeDesc');
+    }
+
+    public function setChoosePayment($val)
+    {
+        $this->Send['ChoosePayment'] = $val;
+
+        return $this;
+    }
+
+    public function getChoosePayment()
+    {
+        return $this->get('ChoosePayment');
+    }
+
+    public function setRemark($val)
+    {
+        $this->Send['Remark'] = $val;
+
+        return $this;
+    }
+
+    public function getRemark()
+    {
+        return $this->get('Remark');
+    }
+
+    public function setChooseSubPayment($val)
+    {
+        $this->Send['ChooseSubPayment'] = $val;
+
+        return $this;
+    }
+
+    public function getChooseSubPayment()
+    {
+        return $this->get('ChooseSubPayment');
+    }
+
+    public function setNeedExtraPaidInfo($val)
+    {
+        $this->Send['NeedExtraPaidInfo'] = $val;
+
+        return $this;
+    }
+
+    public function getNeedExtraPaidInfo()
+    {
+        return $this->get('NeedExtraPaidInfo');
+    }
+
+    public function setDeviceSource($val)
+    {
+        $this->Send['DeviceSource'] = $val;
+
+        return $this;
+    }
+
+    public function getDeviceSource()
+    {
+        return $this->get('DeviceSource');
+    }
+
+    public function setIgnorePayment($val)
+    {
+        $this->Send['IgnorePayment'] = $val;
+
+        return $this;
+    }
+
+    public function getIgnorePayment()
+    {
+        return $this->get('IgnorePayment');
+    }
+
+    public function setClientBackURL($val)
+    {
+        $this->Send['ClientBackURL'] = $val;
+
+        return $this;
+    }
+
+    public function getClientBackURL()
+    {
+        return $this->get('ClientBackURL');
+    }
+
+    public function setOrderResultURL($val)
+    {
+        $this->Send['OrderResultURL'] = $val;
+
+        return $this;
+    }
+
+    public function getOrderResultURL()
+    {
+        return $this->get('OrderResultURL');
+    }
+
+    public function setTotalAmount($val)
+    {
+        $this->Send['TotalAmount'] = $val;
+
+        return $this;
+    }
+
+    public function getTotalAmount()
+    {
+        return $this->get('TotalAmount');
+    }
+
+    public function setPlatformID($val)
+    {
+        $this->Send['PlatformID'] = $val;
+
+        return $this;
+    }
+
+    public function getPlatformID()
+    {
+        return $this->get('PlatformID');
+    }
+
+    public function setPlatformChargeFee($val)
+    {
+        $this->Send['PlatformChargeFee'] = $val;
+
+        return $this;
+    }
+
+    public function getPlatformChargeFee()
+    {
+        return $this->get('PlatformChargeFee');
+    }
+
+    public function setPaymentInfoURL($val)
+    {
+        $this->Send['PaymentInfoURL'] = $val;
+
+        return $this;
+    }
+
+    public function getPaymentInfoURL()
+    {
+        return $this->get('PaymentInfoURL');
+    }
+
+    public function setClientRedirectURL($val)
+    {
+        $this->Send['ClientRedirectURL'] = $val;
+
+        return $this;
+    }
+
+    public function getClientRedirectURL()
+    {
+        return $this->get('ClientRedirectURL');
+    }
+
+    public function setAlipayItemName($val)
+    {
+        $this->Send['AlipayItemName'] = $val;
+
+        return $this;
+    }
+
+    public function getAlipayItemName()
+    {
+        return $this->get('AlipayItemName');
+    }
+
+    public function setAlipayItemCounts($val)
+    {
+        $this->Send['AlipayItemCounts'] = $val;
+
+        return $this;
+    }
+
+    public function getAlipayItemCounts()
+    {
+        return $this->get('AlipayItemCounts');
+    }
+
+    public function setAlipayItemPrice($val)
+    {
+        $this->Send['AlipayItemPrice'] = $val;
+
+        return $this;
+    }
+
+    public function getAlipayItemPrice()
+    {
+        return $this->get('AlipayItemPrice');
+    }
+
+    public function setEmail($val)
+    {
+        $this->Send['Email'] = $val;
+
+        return $this;
+    }
+
+    public function getEmail()
+    {
+        return $this->get('Email');
+    }
+
+    public function setPhoneNo($val)
+    {
+        $this->Send['PhoneNo'] = $val;
+
+        return $this;
+    }
+
+    public function getPhoneNo()
+    {
+        return $this->get('PhoneNo');
+    }
+
+    public function setUserName($val)
+    {
+        $this->Send['UserName'] = $val;
+
+        return $this;
+    }
+
+    public function getUserName()
+    {
+        return $this->get('UserName');
+    }
+
+    public function setCreditInstallment($val)
+    {
+        $this->Send['CreditInstallment'] = $val;
+
+        return $this;
+    }
+
+    public function getCreditInstallment()
+    {
+        return $this->get('CreditInstallment');
+    }
+
+    public function setRedeem($val)
+    {
+        $this->Send['Redeem'] = $val;
+
+        return $this;
+    }
+
+    public function getRedeem()
+    {
+        return $this->get('Redeem');
+    }
+
+    public function setUnionPay($val)
+    {
+        $this->Send['UnionPay'] = $val;
+
+        return $this;
+    }
+
+    public function getUnionPay()
+    {
+        return $this->get('UnionPay');
+    }
+
+    public function setLanguage($val)
+    {
+        $this->Send['Language'] = $val;
+
+        return $this;
+    }
+
+    public function getLanguage()
+    {
+        return $this->get('Language');
+    }
+
+    public function setPeriodAmount($val)
+    {
+        $this->Send['PeriodAmount'] = $val;
+
+        return $this;
+    }
+
+    public function getPeriodAmount()
+    {
+        return $this->get('PeriodAmount');
+    }
+
+    public function setPeriodType($val)
+    {
+        $this->Send['PeriodType'] = $val;
+
+        return $this;
+    }
+
+    public function getPeriodType()
+    {
+        return $this->get('PeriodType');
+    }
+
+    public function setFrequency($val)
+    {
+        $this->Send['Frequency'] = $val;
+
+        return $this;
+    }
+
+    public function getFrequency()
+    {
+        return $this->get('Frequency');
+    }
+
+    public function setExecTimes($val)
+    {
+        $this->Send['ExecTimes'] = $val;
+
+        return $this;
+    }
+
+    public function getExecTimes()
+    {
+        return $this->get('ExecTimes');
+    }
+
+    public function setPeriodReturnURL($val)
+    {
+        $this->Send['PeriodReturnURL'] = $val;
+
+        return $this;
+    }
+
+    public function getPeriodReturnURL()
+    {
+        return $this->get('PeriodReturnURL');
+    }
+
+    public function setExpireDate($val)
+    {
+        $this->SendExtend['ExpireDate'] = $val;
+
+        return $this;
+    }
+
+    public function getExpireDate()
+    {
+        return $this->get('ExpireDate');
+    }
+
+    public function setDesc_1($val)
+    {
+        $this->SendExtend['Desc_1'] = $val;
+
+        return $this;
+    }
+
+    public function getDesc_1()
+    {
+        return $this->get('Desc_1');
+    }
+
+    public function setDesc_2($val)
+    {
+        $this->SendExtend['Desc_2'] = $val;
+
+        return $this;
+    }
+
+    public function getDesc_2()
+    {
+        return $this->get('Desc_2');
+    }
+
+    public function setDesc_3($val)
+    {
+        $this->SendExtend['Desc_3'] = $val;
+
+        return $this;
+    }
+
+    public function getDesc_3()
+    {
+        return $this->get('Desc_3');
+    }
+
+    public function setDesc_4($val)
+    {
+        $this->SendExtend['Desc_4'] = $val;
+
+        return $this;
+    }
+
+    public function getDesc_4()
+    {
+        return $this->get('Desc_4');
+    }
+
+    public function setExpireTime($val)
+    {
+        $this->SendExtend['ExpireTime'] = $val;
+
+        return $this;
+    }
+
+    public function getExpireTime()
+    {
+        return $this->get('ExpireTime');
+    }
+
+    public function setInstallmentAmount($val)
+    {
+        $this->SendExtend['InstallmentAmount'] = $val;
+
+        return $this;
+    }
+
+    public function getInstallmentAmount()
+    {
+        return $this->get('InstallmentAmount');
+    }
+
+    public function setHashIV($val)
+    {
+        $this->HashIV = $val;
+
+        return $this;
+    }
+
+    public function getHashIV()
+    {
+        return $this->HashIV;
+    }
+
+    public function setHashKey($val)
+    {
+        $this->HashKey = $val;
+
+        return $this;
+    }
+
+    public function getHashKey()
+    {
+        return $this->HashKey;
+    }
+
+    public function setMerchantID($val)
+    {
+        $this->MerchantID = $val;
+
+        return $this;
+    }
+
+    public function getMerchantID()
+    {
+        return $this->MerchantID;
+    }
+
+    public function setServiceURL($val)
+    {
+        $this->ServiceURL = $val;
+
+        return $this;
+    }
+
+    public function getServiceURL()
+    {
+        return $this->ServiceURL;
+    }
 }

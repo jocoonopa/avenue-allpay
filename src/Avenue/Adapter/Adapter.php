@@ -8,8 +8,8 @@ use Avenue\Adapter\ITarget;
 
 use Avenue\Helper\AccessHelper;
 use Avenue\Helper\ServiceURLHelper;
-use Avenue\Helper\Param\SendParamHelper;
-use Avenue\Helper\Param\SendExtendParamHelper;
+// use Avenue\Helper\Param\SendParamHelper;
+// use Avenue\Helper\Param\SendExtendParamHelper;
 use Avenue\Helper\TestConfigHelper;
 
 use Avenue\Strategy\Search;
@@ -21,7 +21,7 @@ class Adapter implements ITarget
      * 
      * @var Avenue\AllInOne
      */
-    private $allInOne;
+    public $allInOne;
 
     /**
      * 歐付寶屬性存取元件
@@ -47,19 +47,16 @@ class Adapter implements ITarget
     public function __construct()
     {
         $this->allInOne = new AllInOne;
-        $this->accessor = new AccessHelper($this->allInOne);
-        $this->send = new SendParamHelper();
-        $this->sendExtend = new SendExtendParamHelper();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function init($hashKey, $hashIv, $merchantID, $isProd = false) 
+    public function init($hashKey, $hashIV, $merchantID, $isProd = false) 
     {
-        $this->accessor
+        $this->allInOne
             ->setHashKey($hashKey)
-            ->setHashIv($hashIv)
+            ->setHashIV($hashIV)
             ->setMerchantID($merchantID)
             ->setServiceURL($isProd ? ServiceURLHelper::PROD : ServiceURLHelper::TEST)
         ;
@@ -70,9 +67,9 @@ class Adapter implements ITarget
     /**
      * 將元件初始化為測試狀態
      */
-    public function initTest()
+    public function initTest($isProd = false)
     {
-        return $this->init(TestConfigHelper::HASH_KEY, TestConfigHelper::HASH_LV, TestConfigHelper::MERCHANT_ID, false);
+        return $this->init(TestConfigHelper::HASH_KEY, TestConfigHelper::HASH_IV, TestConfigHelper::MERCHANT_ID, $isProd);
     }
 
     /**
@@ -81,13 +78,15 @@ class Adapter implements ITarget
     public function pay(array $send)
     {
         foreach ($send as $key => $val) {
-            call_user_func_array(array($this->send, 'set' . $key), array($val));
+            call_user_func_array(array($this->allInOne, 'set' . $key), array($val));
         }
 
-        $this->allInOne->Send = array_merge($this->allInOne->Send, $this->send->getDataProvider());
-        $this->allInOne->SendExtend = array_merge($this->allInOne->SendExtend, $this->sendExtend->getDataProvider());
-
-        return $this->allInOne->CheckOutString(($this->accessor->getServiceURL() === ServiceURLHelper::TEST) ? '送出' : null);
+        try {
+            return $this->allInOne->CheckOutString(($this->allInOne->getServiceURL() === ServiceURLHelper::TEST) ? '送出' : null);
+        } catch (\Exception $e) {
+            throw $e;
+        }
+        
     }
 
     /**
