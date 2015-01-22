@@ -3,11 +3,11 @@
     "type": "library",
     "description": "Logging for PHP 5.3",
     "keywords": ["avenue","allpay"],
-    "homepage": "http://github.com/jocoonopa/avenueAllPay",
+    "homepage": "https://github.com/jocoonopa/avenue-allpay",
     "license": "MIT",
     "authors": [
         {
-            "name": "Jocoonopa",
+            "name": "jocoonopa",
             "email": "jocoonopa@gmail.com",
             "homepage": "http://jocoomadao.logdown.com",
             "role": "Developer"
