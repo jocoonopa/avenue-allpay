@@ -4,15 +4,9 @@ namespace Avenue\Adapter;
 
 use Avenue\AllInOne;
 
-use Avenue\Adapter\ITarget;
-
 use Avenue\Helper\AccessHelper;
 use Avenue\Helper\ServiceURLHelper;
-// use Avenue\Helper\Param\SendParamHelper;
-// use Avenue\Helper\Param\SendExtendParamHelper;
 use Avenue\Helper\TestConfigHelper;
-
-use Avenue\Strategy\Search;
 
 class Adapter implements ITarget
 {
@@ -22,27 +16,6 @@ class Adapter implements ITarget
      * @var Avenue\AllInOne
      */
     public $allInOne;
-
-    /**
-     * 歐付寶屬性存取元件
-     * 
-     * @var Avenue\Helper\AccessHelper
-     */
-    private $accessor;
-
-    /**
-     * 歐付寶建立訂單 POST參數存取元件
-     * 
-     * @var Avenue\Helper\SendHelper
-     */
-    private $send;
-
-    /**
-     * 歐付寶建立訂單 POST延伸參數存取元件
-     * 
-     * @var Avenue\Helper\SendExtendHelper
-     */
-    private $sendExtend;
 
     public function __construct()
     {

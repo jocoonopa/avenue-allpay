@@ -39,5 +39,5 @@ interface ITarget
      * @param  Avenue\AllPay\Strategy\Search $strategy
      * @return json 
      */
-    function search(Search $strategy);
+    //function search(Search $strategy);
 }
