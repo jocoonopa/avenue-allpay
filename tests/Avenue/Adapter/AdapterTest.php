@@ -1,9 +1,8 @@
 <?php
 
-namespace Avenue;
+namespace Avenue\Adapter;
 
 use Avenue\PaymentMethod;
-use Avenue\Adapter\Adapter;
 use Avenue\Helper\ServiceURLHelper;
 
 class AdapterTest extends \PHPUnit_Framework_TestCase
@@ -61,6 +60,7 @@ class AdapterTest extends \PHPUnit_Framework_TestCase
         $adapter->init($hashKey, $hashIv, $merchantID, $isProd);
 
         //$this->invokeMethod($user, 'cryptPassword', array('passwordToCrypt'));
+        
         
         $this->assertEquals($hashKey, $adapter->allInOne->getHashKey());
         $this->assertEquals($hashIv, $adapter->allInOne->getHashIV());
