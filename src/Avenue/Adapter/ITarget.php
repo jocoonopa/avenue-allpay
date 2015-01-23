@@ -2,7 +2,7 @@
 
 namespace Avenue\Adapter;
 
-use Avenue\Strategy\Search;
+//use Avenue\Strategy\Search;
 
 interface ITarget 
 {
@@ -19,7 +19,7 @@ interface ITarget
     /**
      * 結帳
      *
-     * @param array $billInfo [訂單資訊關聯陣列]
+     * @param array $send [訂單資訊關聯陣列]
      */
     function pay(array $send);
 

@@ -1762,4 +1762,13 @@ class AllInOne
     {
         return $this->ServiceURL;
     }
+
+    protected function get($key)
+    {
+        return (array_key_exists($key, $this->Send)) 
+            ? $this->Send[$key]
+            : (array_key_exists($key, $this->SendExtend)) 
+                ? $this->SendExtend[$key]
+                : null;
+    }
 }

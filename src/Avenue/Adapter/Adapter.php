@@ -13,7 +13,7 @@ class Adapter implements ITarget
     /**
      * 歐付寶介接元件
      * 
-     * @var Avenue\AllInOne
+     * @var \Avenue\AllInOne
      */
     public $allInOne;
 
