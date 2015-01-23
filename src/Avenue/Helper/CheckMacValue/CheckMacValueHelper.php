@@ -12,8 +12,6 @@ use Avenue\Helper\CheckMacValue\Handler\Request;
 
 class CheckMacValueHelper
 {
-    private $val;
-
     private $lastHandler;
 
     public function __construct(array $post, $hashKey, $hashIV)
@@ -23,11 +21,12 @@ class CheckMacValueHelper
         }
 
         $convertHandler = new ConvertHandler();
-        $this->lastHandler = $cryptHandler = new CryptHandler();
         $hashHandler = new HashHandler($hashKey, $hashIV);
         $lowerHandler = new LowerHandler();
         $sortHandler = new SortHandler();
         $urlencodeHandler = new UrlencodeHandler();
+
+        $this->lastHandler = $cryptHandler = new CryptHandler();
 
         // 設定接班人
         $sortHandler->setNext($convertHandler);
@@ -40,6 +39,8 @@ class CheckMacValueHelper
 
         // 責任鏈開始
         $sortHandler->handle($request);
+
+        return $this;
     }
 
     public function getVal()
