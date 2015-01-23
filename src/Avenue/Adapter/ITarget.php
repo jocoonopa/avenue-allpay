@@ -19,7 +19,7 @@ interface ITarget
     /**
      * 結帳
      *
-     * @param array $send [訂單資訊關聯陣列]
+     * @param array $send [訂單資訊關聯陣列，參數細節要求請參考歐付寶技術文件]
      */
     function pay(array $send);
 
